@@ -230,7 +230,7 @@
                         trigger: footerPlaceholder,
                         start: 'top bottom',
                         end: 'bottom bottom',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                         invalidateOnRefresh: true,
                     },
                 });
@@ -375,7 +375,7 @@
                             y: 0,
                             scale: 1,
                             duration: 0.8,
-                            scrub: 0.4,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             zIndex: 2,
                         });
                     } else {
@@ -548,7 +548,7 @@
                             scrollTrigger: {
                                 trigger: section,
                                 pin: section,
-                                scrub: 0.4,
+                                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                                 start: 'top 5%',
                                 end: 'bottom 90%',
                                 endTrigger: '.at-panel-pin-area',
@@ -589,7 +589,7 @@
                         start: 'top 80%',
                         end: 'top 20%',
                         markers: false,
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     },
 
                     x: '0',
@@ -659,7 +659,7 @@
                         end: 'bottom bottom+=10',
                         markers: false,
                         pinSpacing: false,
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                         // markers: true,
                     },
                 });
@@ -680,7 +680,7 @@
                         trigger: portfolioArea,
                         start: 'top center-=100',
                         end: 'bottom bottom+=10',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     },
                     opacity: 0,
                 });
@@ -762,7 +762,7 @@
                             trigger: root,
                             start: 'top bottom',
                             end: 'bottom top',
-                            scrub: 0.85,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             invalidateOnRefresh: true,
                         },
                     },
@@ -809,7 +809,7 @@
                             trigger: sec6,
                             start: 'top bottom',
                             end: 'bottom top',
-                            scrub: 0.75,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             invalidateOnRefresh: true,
                         },
                     },
@@ -865,7 +865,7 @@
                             end: `+=${scrollDistance}`,
                             pin: stage8,
                             pinSpacing: true,
-                            scrub: 0.4,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             anticipatePin: 1,
                             invalidateOnRefresh: true,
                         },
@@ -1262,7 +1262,7 @@
                     trigger: section,
                     start: 'top bottom',
                     end: 'bottom center',
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     markers: false,
                 },
             });
@@ -1308,7 +1308,7 @@
                     start: 'top top',
                     end: 'bottom top',
                     pin: true,
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     toggleActions: 'play none none reverse',
                     markers: false,
                     invalidateOnRefresh: true,
@@ -1394,7 +1394,7 @@
                 scrollTrigger: {
                     trigger: moveUp[0],
                     start: 'top center',
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                 },
             });
         }
@@ -1420,7 +1420,7 @@
                         trigger: svg,
                         start: 'top 90%',
                         end: 'bottom center',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     },
                 });
             }
@@ -1434,7 +1434,7 @@
                         trigger: svg,
                         start: 'top 90%',
                         end: 'bottom center',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     },
                 });
             }
@@ -1448,7 +1448,7 @@
                         trigger: svg,
                         start: 'top 90%',
                         end: 'bottom center',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     },
                 });
             }
@@ -1492,7 +1492,7 @@
                             scrollTrigger: {
                                 trigger: section,
                                 pin: section,
-                                scrub: 0.4,
+                                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                                 start: 'top 5%',
                                 end: 'bottom 90%',
                                 endTrigger: '.mg-portfolio-area',
@@ -1520,7 +1520,7 @@
                             scrollTrigger: {
                                 trigger: section,
                                 pin: section,
-                                scrub: 0.4,
+                                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                                 start: '30% top',
                                 end: 'bottom bottom',
                                 endTrigger: '.home-2-section-13',
@@ -1559,7 +1559,7 @@
                     pin: true,
                     start: 'top top',
                     end: () => `+=${scrollDistance}%`,
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
                         const progress = Math.min(Math.max(self.progress, 0), 0.9999);
@@ -1637,7 +1637,7 @@
                         scrollTrigger: {
                             trigger: section,
                             pin: section,
-                            scrub: 0.4,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             start: 'top bottom+=200',
                             endTrigger: section.closest('section') || 'body',
                             end: 'bottom top',
@@ -1973,7 +1973,7 @@
                             trigger: archiveContentCol,
                             start: 'top 50px',
                             end: 'bottom bottom',
-                            scrub: 0.4,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             pin: archiveSidebar,
                             pinSpacing: false,
                             invalidateOnRefresh: true,
@@ -2085,7 +2085,7 @@
                     trigger: sectionTrigger,
                     start: 'top 50%',
                     end: 'bottom 70%',
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     invalidateOnRefresh: true,
                 },
             });
@@ -2100,7 +2100,7 @@
                     trigger: sectionTrigger,
                     start: 'top 50%',
                     end: 'bottom 70%',
-                    scrub: 0.4,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     invalidateOnRefresh: true,
                 },
             });
@@ -2663,7 +2663,7 @@
                     scrollTrigger: {
                         trigger: scrollMoveUp,
                         start: 'top 70%',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                         markers: false,
                     },
                 });
@@ -2686,7 +2686,7 @@
                         trigger: item,
                         start: 'top bottom',
                         end: 'bottom bottom',
-                        scrub: 0.4,
+                        scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                         duration: 1.5,
                         ease: 'power4.inOut',
                         markers: false,
@@ -2707,7 +2707,7 @@
                 trigger: '.badge-zoon-in',
                 start: 'top 60%',
                 end: 'bottom 0%',
-                scrub: 0.4,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                 markers: false,
             },
         });
@@ -2718,7 +2718,7 @@
                 trigger: '.badge-text-zoom-in',
                 start: 'top 70%',
                 end: 'bottom 0%',
-                scrub: 0.4,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                 markers: false,
             },
         });
@@ -2765,7 +2765,7 @@
                 pin: true,
                 start: 'top top',
                 end: () => `+=${items.length * 50}%`,
-                scrub: 0.4,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                 invalidateOnRefresh: true,
                 // markers: true,
             },
@@ -2828,7 +2828,7 @@
         gsap.to(scrollRotate, {
             scrollTrigger: {
                 trigger: scrollRotate,
-                scrub: 0.8,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
             },
             rotation: 720,
         });
@@ -2841,7 +2841,7 @@
             scrollTrigger: {
                 trigger: scrollMoveRight,
                 start: 'top 30%',
-                scrub: 0.8,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
             },
         });
     });
@@ -2854,7 +2854,7 @@
             scrollTrigger: {
                 trigger: scrollMoveLeft,
                 start: 'bottom 100%',
-                scrub: 0.8,
+                scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                 // markers: true,
             },
         });
@@ -2874,7 +2874,7 @@
                     trigger: journeyListWrap,
                     start: 'top 50%',
                     end: 'top top',
-                    scrub: 0.5,
+                    scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                     invalidateOnRefresh: true,
                     // markers: true,
                 },
@@ -3602,7 +3602,7 @@
                             trigger: card,
                             start: 'top bottom',
                             end: 'bottom top',
-                            scrub: 0.8,
+                            scrub: 0.9, // smoothing: animations ease into place without moving the page itself
                             invalidateOnRefresh: true,
                         },
                     },
