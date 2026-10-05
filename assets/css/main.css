@@ -38067,4 +38067,133 @@ h1.fz-ds-1::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 220px 220px;
 }
+
+/* services stack: each card paints its own opaque surface (min-height is equalised in JS) */
+.at-service-area .scroll-section .item {
+  background: #0f1227;
+}
+/* phones: compact floating menu button so it covers less text */
+@media (max-width: 575.98px) {
+  .hamburger-sticky-menu {
+    padding: 0 !important;
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+  }
+  .hamburger-sticky-menu > span:first-child {
+    display: none;
+  }
+}
+
+/* no horizontal scrollbar: scaled/pinned blocks (scroll-zoom, tickers) may extend past the viewport.
+   overflow-x:clip (unlike hidden) does not create a scroll container, so pins and fixed layers keep working */
+html,
+body {
+  overflow-x: clip;
+}
+@supports not (overflow: clip) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* ---- About / Contact pages ---- */
+.sec-2-about.block-journey.bg-neutral-900 {
+  background:
+    radial-gradient(60% 70% at 0% 0%, rgba(62, 155, 253, 0.16), transparent 70%),
+    radial-gradient(55% 70% at 100% 100%, rgba(203, 108, 230, 0.15), transparent 70%),
+    #0f1227 !important;
+  border-block: 1px solid var(--vb-line);
+}
+.journey-list__date {
+  color: var(--vb-secondary) !important;
+  font-weight: 700;
+}
+.journey-list__title {
+  color: #ffffff !important;
+}
+.journey-list__desc {
+  color: var(--at-neutral-dark-500) !important;
+}
+.journey-list__item {
+  border-color: var(--vb-line) !important;
+}
+.vb-wa-btn {
+  background: transparent !important;
+  border: 1px solid var(--vb-secondary);
+  color: var(--vb-secondary) !important;
+}
+.vb-wa-btn:hover {
+  background: var(--vb-secondary) !important;
+  color: var(--vb-on-primary) !important;
+}
+.sec-4-about-form__input {
+  color: #ffffff;
+}
+.sec-4-about-form__input::placeholder {
+  color: var(--at-neutral-dark-700);
+  opacity: 1;
+}
+.vb-select,
+.vb-select option {
+  background-color: #0f1227;
+  color: #ffffff;
+}
+.sec-4-about-form__disclaimer {
+  color: var(--at-neutral-dark-700);
+}
+.alt-footer-social-item.white-mode ul li a {
+  color: #ffffff;
+}
+.alt-footer-social-item.white-mode ul li::before {
+  border-bottom-color: var(--vb-line);
+}
+.alt-footer-social-item.white-mode ul li a:hover {
+  color: var(--vb-primary);
+}
+.at-social__link {
+  color: #ffffff;
+}
+.at-social__link:hover {
+  color: var(--vb-primary);
+}
+
+/* FAQ accordion in the brand colours */
+.vb-accordion .accordion-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--vb-line);
+  border-radius: 0;
+}
+.vb-accordion .accordion-button {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 26px 0;
+  box-shadow: none;
+}
+.vb-accordion .accordion-button:not(.collapsed) {
+  color: var(--vb-primary);
+  background: transparent;
+}
+.vb-accordion {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%233e9bfd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+.vb-accordion .accordion-button::after,
+.vb-accordion .accordion-button:not(.collapsed)::after {
+  filter: none;
+}
+.vb-accordion .accordion-body {
+  padding: 0 0 26px;
+  color: var(--at-neutral-dark-500);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* outlined group: the collapsed arrow circle sits over the label start, so reserve room for it */
+.at-btn-group-transparent .at-btn {
+  padding-inline-start: 44px;
+}
 /*# sourceMappingURL=main.css.map */

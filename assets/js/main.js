@@ -187,6 +187,9 @@
     if (typeof gsap !== 'undefined') {
         let tl = gsap.timeline();
         gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+        // mobile: the browser toolbar sliding in/out resizes the viewport; without this every resize
+        // re-measures all pins mid-scroll (ScrollSmoother used to set this implicitly)
+        ScrollTrigger.config({ ignoreMobileResize: true });
 
         // Footer Fixed Bottom Reveal Effect (Kanso style) - Setup BEFORE ScrollSmoother
         const footerFixedBottom = document.querySelector('.footer-fixed-bottom');
