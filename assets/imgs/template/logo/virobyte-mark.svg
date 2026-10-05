@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="168 10 100 112" width="100" height="112" role="img" aria-label="Virobyte">
+  <title>Virobyte</title>
+  <defs>
+    <linearGradient id="vbText" gradientUnits="userSpaceOnUse" x1="0" y1="38" x2="0" y2="95"><stop offset="0" stop-color="#3e9bfd"/><stop offset="1" stop-color="#cb6ce6"/></linearGradient>
+    <linearGradient id="vbInner" gradientUnits="userSpaceOnUse" x1="0" y1="22" x2="0" y2="110"><stop offset="0" stop-color="#7cc3ff"/><stop offset="1" stop-color="#3e9bfd"/></linearGradient>
+    <linearGradient id="vbOuter" gradientUnits="userSpaceOnUse" x1="0" y1="22" x2="0" y2="110"><stop offset="0" stop-color="#f1cdfb"/><stop offset="1" stop-color="#cb6ce6"/></linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M248.5 92.4 L256.1 88.0 L256.1 44.0 L218.0 22.0 L179.9 44.0 L179.9 88.0 L218.0 110.0 L231.7 102.1" stroke="url(#vbOuter)" stroke-width="4.5"/>
+    <path d="M218.0 37.0 L243.1 51.5 L243.1 80.5 L218.0 95.0 L192.9 80.5 L192.9 51.5 Z" stroke="url(#vbInner)" stroke-width="6"/>
+    <path d="M230.6 87.8 L242.6 108.5" stroke="url(#vbInner)" stroke-width="6"/>
+  </g>
+</svg>
