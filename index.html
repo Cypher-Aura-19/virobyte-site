@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" class="vb-loading">
 
 <head>
     <!-- prettier-ignore -->
@@ -13,6 +13,21 @@
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/template/logo/virobyte-mark.svg">
 
+    <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/imgs/template/logo/virobyte-mark.svg" as="image">
+    <style>
+        html{scrollbar-gutter:stable}
+        html.vb-loading{overflow:hidden}
+        #vb-preloader{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:#0a0b16;transition:opacity .6s ease,visibility .6s;animation:vbfail 0s linear 20s forwards}
+        #vb-preloader.vb-pl-hide{opacity:0;visibility:hidden;pointer-events:none}
+        .vb-pl-inner{display:flex;flex-direction:column;align-items:center;gap:28px;width:min(280px,70vw)}
+        .vb-pl-inner img{width:96px;height:auto;animation:vbpl 1.6s ease-in-out infinite}
+        .vb-pl-track{width:100%;height:4px;border-radius:4px;background:rgba(160,175,255,.18);overflow:hidden}
+        #vb-pl-bar{display:block;height:100%;transform-origin:left;transform:scaleX(.04);background:linear-gradient(90deg,#3e9bfd,#cb6ce6);transition:transform .35s ease}
+        @keyframes vbpl{0%,100%{opacity:.7;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+        @keyframes vbfail{to{opacity:0;visibility:hidden;pointer-events:none}}
+        @media (prefers-reduced-motion:reduce){.vb-pl-inner img{animation:none}}
+    </style>
     <!-- Libs CSS -->
     <link rel="stylesheet" href="assets/css/vendors/carouselTicker.css">
     <link rel="stylesheet" href="assets/css/vendors/bootstrap.min.css">
@@ -28,6 +43,12 @@
 </head>
 
 <body class="at-magic-cursor">
+    <div id="vb-preloader" role="status" aria-label="Loading Virobyte">
+        <div class="vb-pl-inner">
+            <img width="100" height="112" src="assets/imgs/template/logo/virobyte-mark.svg" alt="">
+            <div class="vb-pl-track"><span id="vb-pl-bar"></span></div>
+        </div>
+    </div>
     <!-- prettier-ignore -->
 
     <!--search-form-start -->
@@ -39,7 +60,7 @@
                     <div class="at-search-top d-flex justify-content-between align-items-center">
                         <div class="at-header-logo at-search-logo">
                             <a href="index.html">
-                                <img decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
+                                <img width="498" height="112" decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
                             </a>
                         </div>
                         <button class="at-search-close">
@@ -105,7 +126,7 @@
                     <div class="col-xl-2 col-6">
                         <div class="at-header-logo">
                             <a href="index.html">
-                                <img decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
+                                <img width="498" height="112" decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
                             </a>
                         </div>
                     </div>
@@ -174,7 +195,7 @@
             <div class="at-offcanvas-top d-flex align-items-center justify-content-between">
                 <div class="at-offcanvas-logo">
                     <a href="index.html">
-                        <img decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
+                        <img width="498" height="112" decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
                     </a>
                 </div>
                 <div class="at-offcanvas-close-btn">
@@ -196,19 +217,19 @@
             <div class="at-offcanvas-gallery d-none d-xl-block">
                 <div class="sec-2-home-5__avatars-row d-flex gap-2">
                     <div class="sec-2-home-5__avatar-sm at-offcanvas-gallery-img">
-                        <img decoding="async" class="img-cover" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
+                        <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
                     </div>
                     <div class="sec-2-home-5__avatar-sm at-offcanvas-gallery-img">
-                        <img decoding="async" class="img-cover" src="assets/imgs/vb/why-2.webp" alt="Virobyte">
+                        <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-2.webp" alt="Virobyte">
                     </div>
                     <div class="sec-2-home-5__avatar-sm at-offcanvas-gallery-img">
-                        <img decoding="async" class="img-cover" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
+                        <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
                     </div>
                     <div class="sec-2-home-5__avatar-sm at-offcanvas-gallery-img">
-                        <img decoding="async" class="img-cover" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
+                        <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
                     </div>
                     <div class="sec-2-home-5__avatar-sm at-offcanvas-gallery-img">
-                        <img decoding="async" class="img-cover" src="assets/imgs/vb/why-5.webp" alt="Virobyte">
+                        <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-5.webp" alt="Virobyte">
                     </div>
                 </div>
             </div>
@@ -273,7 +294,7 @@
             <div class="at-offcanvas-2-left">
                 <div class="at-header-logo d-flex justify-content-between align-items-center mb-50">
                     <a href="index.html">
-                        <img decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
+                        <img width="498" height="112" decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
                     </a>
                     <span class="hamburger-close-btn">
                         <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -339,12 +360,12 @@
                 <!--Home 2 Section 1-->
                 <div class="sec-1-home-2 pt-85 container-2200">
                     <div class="overflow-hidden p-relative pt-90 pb-90 mx-lg-3 mx-2">
-                        <div class="p-absolute top-0 left-0 w-100 h-100 rounded-5 opacity-10 z-0" data-background="assets/imgs/pages/noise-static.gif"></div>
+                        <div class="p-absolute top-0 left-0 w-100 h-100 rounded-5 opacity-10 z-0 vb-noise"></div>
                         <div class="container p-relative z-1">
                             <div class="row g-4 align-items-end">
                                 <div class="col-xxl-2 col-md-4">
                                     <div class="ripple-image ripples rounded-3 overflow-hidden">
-                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/hero.webp" alt="Virobyte developer building a web application">
+                                        <img width="514" height="358" decoding="async" class="img-cover" src="assets/imgs/vb/hero.webp" alt="Virobyte developer building a web application">
                                     </div>
                                 </div>
                                 <div class="col-xxl-2 col-lg-5 col-md-6 col-12">
@@ -510,10 +531,10 @@
                                 <div class="col-xxl-3 col-lg-4 col-md-7 tp_fade-anim">
                                     <div class="card-item p-relative at_fade_anim" data-fade-from="bottom" data-duration="1" data-delay="0.5">
                                         <div class="card-item__bg">
-                                            <img decoding="async" src="assets/imgs/vb/team-card.webp" alt="Engineer working beside server racks" class="home-2-card-item__bg-img img-cover">
+                                            <img width="814" height="1084" decoding="async" src="assets/imgs/vb/team-card.webp" alt="Engineer working beside server racks" class="home-2-card-item__bg-img img-cover">
                                         </div>
                                         <div class="card-item-avatar p-absolute top-0 end-0 changeless">
-                                            <img decoding="async" src="assets/imgs/vb/why-5.webp" alt="Virobyte support" class="home-2-card-item__avatar-img">
+                                            <img width="300" height="300" decoding="async" src="assets/imgs/vb/why-5.webp" alt="Virobyte support" class="home-2-card-item__avatar-img">
                                         </div>
                                         <div class="card-item-content p-absolute bottom-0 start-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -559,112 +580,112 @@
                                     <ul class="carouselTicker__list">
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
+                                                <img width="105" height="40" decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
+                                                <img width="118" height="40" decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
+                                                <img width="196" height="40" decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
+                                                <img width="170" height="40" decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
+                                                <img width="105" height="40" decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
+                                                <img width="196" height="40" decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
+                                                <img width="170" height="40" decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
+                                                <img width="105" height="40" decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
+                                                <img width="118" height="40" decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
+                                                <img width="196" height="40" decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
+                                                <img width="170" height="40" decoding="async" src="assets/imgs/tech/t-postgresql.svg" alt="PostgreSQL">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
+                                                <img width="105" height="40" decoding="async" src="assets/imgs/tech/t-react.svg" alt="React">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-nodedotjs.svg" alt="Node.js">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
+                                                <img width="131" height="40" decoding="async" src="assets/imgs/tech/t-flutter.svg" alt="Flutter">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
+                                                <img width="118" height="40" decoding="async" src="assets/imgs/tech/t-python.svg" alt="Python">
                                             </div>
                                         </li>
                                         <li class="carouselTicker__item">
                                             <div class="brand-item dark-mode-invert">
-                                                <img decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
+                                                <img width="196" height="40" decoding="async" src="assets/imgs/tech/t-whatsapp.svg" alt="WhatsApp Business API">
                                             </div>
                                         </li>
                                     </ul>
@@ -673,7 +694,7 @@
                             <div class="col-12">
                                 <div class="d-flex flex-wrap align-items-center justify-content-center">
                                     <a href="mailto:virobyte.ai@gmail.com" class="at-btn bg-transparent p-relative">
-                                        <img decoding="async" src="assets/imgs/icons/badge-1.svg" alt="Virobyte">
+                                        <img width="141" height="141" decoding="async" src="assets/imgs/icons/badge-1.svg" alt="Virobyte">
                                         <span class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center justify-content-center">
                                             <i class="text-white">
                                                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -752,7 +773,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-web.webp" alt="Developer building a web application" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-web.webp" alt="Developer building a web application" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -787,7 +808,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-mobile.webp" alt="Mobile app on a smartphone beside a laptop" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-mobile.webp" alt="Mobile app on a smartphone beside a laptop" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -821,7 +842,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-ai.webp" alt="White AI robot surrounded by network lines" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-ai.webp" alt="White AI robot surrounded by network lines" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -856,7 +877,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-whatsapp.webp" alt="Hand holding a smartphone showing WhatsApp" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-whatsapp.webp" alt="Hand holding a smartphone showing WhatsApp" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -890,7 +911,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-automation.webp" alt="Task board dashboard on a tablet" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-automation.webp" alt="Task board dashboard on a tablet" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -924,7 +945,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-erp.webp" alt="Business charts on a tablet" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-erp.webp" alt="Business charts on a tablet" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -958,7 +979,7 @@
                                             <div class="col-lg-5 offset-lg-1">
                                                 <div class="rounded-4 overflow-hidden">
                                                     <a href="#contact">
-                                                        <img decoding="async" class="img-cover" src="assets/imgs/vb/svc-ux.webp" alt="Designer sketching an interface on a tablet" />
+                                                        <img width="1398" height="814" decoding="async" class="img-cover" src="assets/imgs/vb/svc-ux.webp" alt="Designer sketching an interface on a tablet" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -983,27 +1004,27 @@
                                     <div class="swiper-wrapper position-relative">
                                         <div class="swiper-slide thumb-slide-1 d-flex justify-content-center">
                                             <div class="avatar-thumbnail">
-                                                <img decoding="async" class="img-cover" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
+                                                <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
                                             </div>
                                         </div>
                                         <div class="swiper-slide thumb-slide-2 d-flex justify-content-center">
                                             <div class="avatar-thumbnail">
-                                                <img decoding="async" class="img-cover" src="assets/imgs/vb/why-2.webp" alt="Virobyte">
+                                                <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-2.webp" alt="Virobyte">
                                             </div>
                                         </div>
                                         <div class="swiper-slide thumb-slide-3 d-flex justify-content-center">
                                             <div class="avatar-thumbnail">
-                                                <img decoding="async" class="img-cover" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
+                                                <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
                                             </div>
                                         </div>
                                         <div class="swiper-slide thumb-slide-4 d-flex justify-content-center">
                                             <div class="avatar-thumbnail">
-                                                <img decoding="async" class="img-cover" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
+                                                <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
                                             </div>
                                         </div>
                                         <div class="swiper-slide thumb-slide-5 d-flex justify-content-center">
                                             <div class="avatar-thumbnail">
-                                                <img decoding="async" class="img-cover" src="assets/imgs/vb/why-5.webp" alt="Virobyte">
+                                                <img width="300" height="300" decoding="async" class="img-cover" src="assets/imgs/vb/why-5.webp" alt="Virobyte">
                                             </div>
                                         </div>
                                     </div>
@@ -1103,7 +1124,7 @@
                                             </span>
                                         </div>
                                         <a href="#contact" class="alt-portfolio-thumb p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-school.webp" alt="Classroom of students raising their hands">
+                                            <img width="816" height="974" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-school.webp" alt="Classroom of students raising their hands">
                                             <div class="alt-portfolio-btn">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">flagship</span>
@@ -1117,7 +1138,7 @@
                                 <div class="col-xxl-4 col-xl-4 offset-xl-8 offset-xl-7 col-lg-4 col-md-6">
                                     <div class="alt-portfolio-item mb-30 alt-portfolio-item-2 at-hover-item">
                                         <a href="#contact" class="alt-portfolio-thumb mb-15 p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-whatsapp.webp" alt="WhatsApp on a smartphone">
+                                            <img width="1106" height="1084" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-whatsapp.webp" alt="WhatsApp on a smartphone">
                                             <div class="alt-portfolio-btn">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">whatsapp</span>
@@ -1149,7 +1170,7 @@
                                             </span>
                                         </div>
                                         <a href="#contact" class="alt-portfolio-thumb p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-pos.webp" alt="Cashier at a point-of-sale terminal">
+                                            <img width="816" height="1084" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-pos.webp" alt="Cashier at a point-of-sale terminal">
                                             <div class="alt-portfolio-btn">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">retail</span>
@@ -1180,7 +1201,7 @@
                                     </div>
                                     <div class="alt-portfolio-item alt-portfolio-item-4 mb-30 at-hover-item">
                                         <a href="#contact" class="alt-portfolio-thumb mb-15 p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-clinic.webp" alt="Doctor holding a clipboard">
+                                            <img width="816" height="890" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-clinic.webp" alt="Doctor holding a clipboard">
                                             <div class="alt-portfolio-btn end-0 me-3">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">coming soon</span>
@@ -1212,7 +1233,7 @@
                                             </span>
                                         </div>
                                         <a href="#contact" class="alt-portfolio-thumb p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-hr.webp" alt="Team meeting in an office">
+                                            <img width="814" height="1084" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-hr.webp" alt="Team meeting in an office">
                                             <div class="alt-portfolio-btn">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">coming soon</span>
@@ -1226,7 +1247,7 @@
                                 <div class="col-xl-4 offset-xxl-8 offset-xl-8 col-lg-5 col-md-6">
                                     <div class="alt-portfolio-item alt-portfolio-item-6 mb-30 at-hover-item">
                                         <a href="#contact" class="alt-portfolio-thumb mb-15 p-relative fix d-block">
-                                            <img decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-estate.webp" alt="Modern residential building">
+                                            <img width="1106" height="782" decoding="async" class="w-100 scale-img-from-to" data-value-1="1.5" data-value-2="1" src="assets/imgs/vb/p-estate.webp" alt="Modern residential building">
                                             <div class="alt-portfolio-btn">
                                                 <div class="content">
                                                     <span class="bg-transparent text-uppercase border px-3 py-1 rounded-pill text-white fz-font-label">coming soon</span>
@@ -1307,7 +1328,7 @@
                                         <span class="card-award-date">[ 01 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-web-sm.webp" alt="Developer building a web application" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-web-sm.webp" alt="Developer building a web application" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">Web Development</h3>
                                         </div>
@@ -1328,7 +1349,7 @@
                                         <span class="card-award-date">[ 02 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-mobile-sm.webp" alt="Mobile app on a smartphone beside a laptop" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-mobile-sm.webp" alt="Mobile app on a smartphone beside a laptop" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">Mobile Apps</h3>
                                         </div>
@@ -1349,7 +1370,7 @@
                                         <span class="card-award-date">[ 03 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-ai-sm.webp" alt="White AI robot surrounded by network lines" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-ai-sm.webp" alt="White AI robot surrounded by network lines" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">AI Solutions</h3>
                                         </div>
@@ -1370,7 +1391,7 @@
                                         <span class="card-award-date">[ 04 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-whatsapp-sm.webp" alt="Hand holding a smartphone showing WhatsApp" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-whatsapp-sm.webp" alt="Hand holding a smartphone showing WhatsApp" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">WhatsApp Automation</h3>
                                         </div>
@@ -1391,7 +1412,7 @@
                                         <span class="card-award-date">[ 05 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-automation-sm.webp" alt="Task board dashboard on a tablet" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-automation-sm.webp" alt="Task board dashboard on a tablet" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">Process Automation</h3>
                                         </div>
@@ -1412,7 +1433,7 @@
                                         <span class="card-award-date">[ 06 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-erp-sm.webp" alt="Business charts on a tablet" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-erp-sm.webp" alt="Business charts on a tablet" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">ERP & CRM</h3>
                                         </div>
@@ -1433,7 +1454,7 @@
                                         <span class="card-award-date">[ 07 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-ux-sm.webp" alt="Designer sketching an interface on a tablet" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-ux-sm.webp" alt="Designer sketching an interface on a tablet" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">UI/UX Design</h3>
                                         </div>
@@ -1454,7 +1475,7 @@
                                         <span class="card-award-date">[ 08 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-analytics-sm.webp" alt="Analytics dashboard on a laptop" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-analytics-sm.webp" alt="Analytics dashboard on a laptop" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">Data Analytics</h3>
                                         </div>
@@ -1475,7 +1496,7 @@
                                         <span class="card-award-date">[ 09 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-cloud-sm.webp" alt="Rows of servers in a data center" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-cloud-sm.webp" alt="Rows of servers in a data center" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">DevOps & Cloud</h3>
                                         </div>
@@ -1496,7 +1517,7 @@
                                         <span class="card-award-date">[ 10 ]</span>
                                         <div class="card-award-content">
                                             <div class="card-award-image">
-                                                <img decoding="async" src="assets/imgs/vb/srv-support-sm.webp" alt="Support agents wearing headsets" class="w-100 h-100 img-cover" />
+                                                <img width="178" height="124" decoding="async" src="assets/imgs/vb/srv-support-sm.webp" alt="Support agents wearing headsets" class="w-100 h-100 img-cover" />
                                             </div>
                                             <h3 class="h6 card-award-title mb-0">Maintenance & Support</h3>
                                         </div>
@@ -1537,27 +1558,27 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="about-me-slider-thumb at-item-anime marque">
-                                    <img decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-1.webp" alt="Engineering team working at a shared table">
+                                    <img width="1100" height="800" decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-1.webp" alt="Engineering team working at a shared table">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="about-me-slider-thumb at-item-anime marque">
-                                    <img decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-2.webp" alt="Team discussing a project over laptops">
+                                    <img width="1100" height="800" decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-2.webp" alt="Team discussing a project over laptops">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="about-me-slider-thumb at-item-anime marque">
-                                    <img decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-3.webp" alt="Engineer walking through a server hall">
+                                    <img width="1100" height="800" decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-3.webp" alt="Engineer walking through a server hall">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="about-me-slider-thumb at-item-anime marque">
-                                    <img decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-4.webp" alt="Interface dashboard on a dark tablet">
+                                    <img width="1100" height="800" decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-4.webp" alt="Interface dashboard on a dark tablet">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="about-me-slider-thumb at-item-anime marque">
-                                    <img decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-5.webp" alt="Colleagues planning around a meeting table">
+                                    <img width="1100" height="800" decoding="async" class="w-100 rounded-4" src="assets/imgs/vb/sl-5.webp" alt="Colleagues planning around a meeting table">
                                 </div>
                             </div>
                         </div>
@@ -1633,7 +1654,7 @@
 
                                                                     <div class="testimonial-author d-flex mb-0">
                                                                         <div class="testimonial-left-img">
-                                                                            <img decoding="async" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
+                                                                            <img width="300" height="300" decoding="async" src="assets/imgs/vb/why-3.webp" alt="Virobyte">
                                                                         </div>
                                                                         <div class="testimonial-content">
                                                                             <h3 class="h6 testimonial-content-author-name fw-600 mb-0">Our Mission</h3>
@@ -1654,7 +1675,7 @@
 
                                                                     <div class="testimonial-author d-flex mb-0">
                                                                         <div class="testimonial-left-img">
-                                                                            <img decoding="async" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
+                                                                            <img width="300" height="300" decoding="async" src="assets/imgs/vb/why-4.webp" alt="Virobyte">
                                                                         </div>
                                                                         <div class="testimonial-content">
                                                                             <h3 class="h6 testimonial-content-author-name fw-600 mb-0">Our Vision</h3>
@@ -1675,7 +1696,7 @@
 
                                                                     <div class="testimonial-author d-flex mb-0">
                                                                         <div class="testimonial-left-img">
-                                                                            <img decoding="async" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
+                                                                            <img width="300" height="300" decoding="async" src="assets/imgs/vb/why-1.webp" alt="Virobyte">
                                                                         </div>
                                                                         <div class="testimonial-content">
                                                                             <h3 class="h6 testimonial-content-author-name fw-600 mb-0">Our Values</h3>
@@ -1729,7 +1750,7 @@
                                         </div>
                                     </div>
                                     <a href="#">
-                                        <img decoding="async" class="postbox-scroll-zoom-img img-cover" src="assets/imgs/vb/showreel.webp" alt="Rows of servers in a data center">
+                                        <img width="1600" height="746" decoding="async" class="postbox-scroll-zoom-img img-cover" src="assets/imgs/vb/showreel.webp" alt="Rows of servers in a data center">
                                     </a>
                                     <div class="postbox-play-btn postbox-scroll-zoom-play z-index-1 d-flex align-items-center justify-content-center gap-3">
                                         <h1 class="text-white d-none d-md-flex">Smart software</h1>
@@ -1801,7 +1822,7 @@
     </div>
     <div class="blog-card-2__thumb hover-effect-1">
         <a href="#contact" class="blog-card-2__img-link">
-            <img decoding="async" src="assets/imgs/vb/pr-1.webp" class="blog-card-2__img" alt="Handshake over a consultation desk">
+            <img width="678" height="420" decoding="async" src="assets/imgs/vb/pr-1.webp" class="blog-card-2__img" alt="Handshake over a consultation desk">
         </a>
     </div>
     <div class="blog-card-2__right">
@@ -1819,7 +1840,7 @@
     </div>
     <div class="blog-card-2__thumb hover-effect-1">
         <a href="#contact" class="blog-card-2__img-link">
-            <img decoding="async" src="assets/imgs/vb/pr-2.webp" class="blog-card-2__img" alt="Interface design shown on a laptop">
+            <img width="678" height="420" decoding="async" src="assets/imgs/vb/pr-2.webp" class="blog-card-2__img" alt="Interface design shown on a laptop">
         </a>
     </div>
     <div class="blog-card-2__right">
@@ -1837,7 +1858,7 @@
     </div>
     <div class="blog-card-2__thumb hover-effect-1">
         <a href="#contact" class="blog-card-2__img-link">
-            <img decoding="async" src="assets/imgs/vb/pr-3.webp" class="blog-card-2__img" alt="Source code in a dark editor">
+            <img width="678" height="420" decoding="async" src="assets/imgs/vb/pr-3.webp" class="blog-card-2__img" alt="Source code in a dark editor">
         </a>
     </div>
     <div class="blog-card-2__right">
@@ -1855,7 +1876,7 @@
     </div>
     <div class="blog-card-2__thumb hover-effect-1">
         <a href="#contact" class="blog-card-2__img-link">
-            <img decoding="async" src="assets/imgs/vb/pr-4.webp" class="blog-card-2__img" alt="Blue-lit server rack">
+            <img width="678" height="420" decoding="async" src="assets/imgs/vb/pr-4.webp" class="blog-card-2__img" alt="Blue-lit server rack">
         </a>
     </div>
     <div class="blog-card-2__right">
@@ -1873,7 +1894,7 @@
     </div>
     <div class="blog-card-2__thumb hover-effect-1">
         <a href="#contact" class="blog-card-2__img-link">
-            <img decoding="async" src="assets/imgs/vb/pr-5.webp" class="blog-card-2__img" alt="Support agents wearing headsets">
+            <img width="678" height="420" decoding="async" src="assets/imgs/vb/pr-5.webp" class="blog-card-2__img" alt="Support agents wearing headsets">
         </a>
     </div>
     <div class="blog-card-2__right">
@@ -1903,7 +1924,7 @@
                             <div class="d-flex flex-wrap align-items-start gap-5">
                                 <div class="at-header-logo">
                                     <a href="index.html">
-                                        <img decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
+                                        <img width="498" height="112" decoding="async" class="vb-logo" src="assets/imgs/template/logo/virobyte-logo.svg" alt="Virobyte">
                                     </a>
                                 </div>
                                 <div class="d-flex flex-column gap-3">
@@ -2091,8 +2112,64 @@
     <script src="assets/js/vendors/imagesloaded-pkgd.js"></script>
     <script src="assets/js/vendors/isotope.pkgd.min.js"></script>
     <script src="assets/js/vendors/image-hover-effects.js"></script>
-    <script src="assets/js/at-cursor.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+    (function () {
+        // Start the animation scripts only when fonts + images are in, so every measurement
+        // (SplitText lines, ScrollTrigger pins) is taken on the final layout.
+        var root = document.documentElement, pl = document.getElementById('vb-preloader'), bar = document.getElementById('vb-pl-bar');
+        var booted = false, fontsOk = false, loaded = false;
+        var imgs = [].slice.call(document.images), total = imgs.length || 1, done = 0;
+        function prog() { if (bar) bar.style.transform = 'scaleX(' + Math.max(0.04, Math.min(1, done / total) * 0.92) + ')'; }
+        imgs.forEach(function (i) {
+            if (i.complete) { done++; return; }
+            i.addEventListener('load', function () { done++; prog(); });
+            i.addEventListener('error', function () { done++; prog(); });
+        });
+        prog();
+        function add(src, cb) {
+            var s = document.createElement('script');
+            s.src = src; s.onload = cb; s.onerror = cb;
+            document.body.appendChild(s);
+        }
+        function watch() {
+            // safety net: if layout height changes late, re-measure the scroll animations
+            if (!('ResizeObserver' in window) || !window.ScrollTrigger) return;
+            var last = document.documentElement.scrollHeight, t;
+            new ResizeObserver(function () {
+                var h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) < 3) return;
+                clearTimeout(t);
+                t = setTimeout(function () { ScrollTrigger.refresh(); last = document.documentElement.scrollHeight; }, 250);
+            }).observe(document.body);
+        }
+        function reveal() {
+            if (bar) bar.style.transform = 'scaleX(1)';
+            root.classList.remove('vb-loading');
+            if (pl) { pl.classList.add('vb-pl-hide'); setTimeout(function () { pl.remove(); }, 800); }
+            watch();
+        }
+        function boot() {
+            if (booted) return;
+            booted = true;
+            add('assets/js/at-cursor.js', function () {
+                add('assets/js/main.js', function () {
+                    requestAnimationFrame(function () {
+                        if (window.ScrollTrigger) { ScrollTrigger.sort(); ScrollTrigger.refresh(true); }
+                        reveal();
+                    });
+                });
+            });
+        }
+        function check() { if (fontsOk && loaded) boot(); }
+        if (document.fonts && document.fonts.load) {
+            Promise.all([document.fonts.load('400 16px "DM Sans"'), document.fonts.load('700 16px "DM Sans"'), document.fonts.ready])
+                .then(function () { fontsOk = true; check(); }, function () { fontsOk = true; check(); });
+        } else { fontsOk = true; }
+        if (document.readyState === 'complete') { loaded = true; check(); }
+        else window.addEventListener('load', function () { loaded = true; check(); });
+        setTimeout(function () { fontsOk = true; loaded = true; boot(); }, 15000); // failsafe on very slow links
+    })();
+    </script>
 <script>
     (function () {
         // perf: pause the background video while it is off-screen
