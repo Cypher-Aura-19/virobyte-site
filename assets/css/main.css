@@ -38296,4 +38296,49 @@ body {
 .mg-portfolio-item .cs-portfolio-title a:hover {
   color: var(--vb-primary);
 }
+
+/* ---- floating WhatsApp button: one solid colour, no gradient ---- */
+.vb-wa {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 98;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vb-wa svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+.vb-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+}
+.vb-wa:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+/* back-to-top sits above the WhatsApp button */
+.back-to-top-wrapper.back-to-top-btn-show {
+  bottom: 122px;
+}
+@media (max-width: 574.98px) {
+  .vb-wa {
+    right: 20px;
+    bottom: 20px;
+    width: 54px;
+    height: 54px;
+  }
+  .back-to-top-wrapper.back-to-top-btn-show {
+    bottom: 86px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
