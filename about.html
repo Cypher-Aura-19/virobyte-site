@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="assets/css/vendors/spacing.css?v=6e963cc92d">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/main.css?v=6985c2633b">
+    <link rel="stylesheet" href="assets/css/main.css?v=e3d51bdd15">
 </head>
 
 <body class="at-magic-cursor">
@@ -136,7 +136,7 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="index.html#services">Services</a></li>
-                                    <li><a href="index.html#products">Products</a></li>
+                                    <li><a href="products.html">Products</a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
@@ -762,7 +762,7 @@
                                     <div class="sec-4-about-form__field">
                                         <select class="sec-4-about-form__input vb-select" name="service" aria-label="Service you are interested in">
                                             <option value="">Service you are interested in</option>
-                                            <option value="Web Development">Web Development</option><option value="Mobile App Development">Mobile App Development</option><option value="AI Solutions">AI Solutions</option><option value="WhatsApp Automation">WhatsApp Automation</option><option value="Business Process Automation">Business Process Automation</option><option value="ERP & CRM Systems">ERP & CRM Systems</option><option value="UI/UX Design">UI/UX Design</option><option value="Data Analytics & Dashboards">Data Analytics & Dashboards</option><option value="DevOps & Cloud">DevOps & Cloud</option><option value="Maintenance & Support">Maintenance & Support</option><option value="Something else">Something else</option>
+                                            <option value="Web Development">Web Development</option><option value="Mobile App Development">Mobile App Development</option><option value="AI Solutions">AI Solutions</option><option value="WhatsApp Automation">WhatsApp Automation</option><option value="Business Process Automation">Business Process Automation</option><option value="ERP & CRM Systems">ERP & CRM Systems</option><option value="UI/UX Design">UI/UX Design</option><option value="Data Analytics & Dashboards">Data Analytics & Dashboards</option><option value="DevOps & Cloud">DevOps & Cloud</option><option value="Maintenance & Support">Maintenance & Support</option><option value="Product: SchoolDesk">Product: SchoolDesk</option><option value="Product: Venue Booking">Product: Venue Booking</option><option value="Product: Clinic Website & Booking">Product: Clinic Website & Booking</option><option value="Product: Travel">Product: Travel</option><option value="Product: AI Notes">Product: AI Notes</option><option value="Waitlist: Clinic / Hospital Management System">Waitlist: Clinic / Hospital Management System</option><option value="Waitlist: HR & Payroll System">Waitlist: HR & Payroll System</option><option value="Waitlist: Real Estate CRM">Waitlist: Real Estate CRM</option><option value="Waitlist: Fee & Accounting Tool">Waitlist: Fee & Accounting Tool</option><option value="Waitlist: Coming soon products">Waitlist: Coming soon products</option><option value="Something else">Something else</option>
                                         </select>
                                     </div>
                                     <div class="sec-4-about-form__field">
@@ -948,7 +948,7 @@
                                     <ul>
                                         <li class="mb-15"><a href="index.html">Home</a></li>
                                         <li class="mb-15"><a href="index.html#services">Services</a></li>
-                                        <li class="mb-15"><a href="index.html#products">Products</a></li>
+                                        <li class="mb-15"><a href="products.html">Products</a></li>
                                         <li class="mb-15"><a href="about.html">About</a></li>
                                         <li class="mb-15"><a href="contact.html">Contact</a></li>
                                     </ul>
@@ -1226,6 +1226,17 @@
     (function () {
         var f = document.getElementById('vb-contact-form');
         if (!f) return;
+        // arriving from a product page: contact.html?topic=Product: SchoolDesk  /  Waitlist: HR & Payroll System
+        var topic = new URLSearchParams(location.search).get('topic');
+        if (topic) {
+            var sel = f.querySelector('select[name=service]');
+            if (sel) { [].forEach.call(sel.options, function (o) { if (o.value === topic) sel.value = topic; }); }
+            var ta = f.querySelector('textarea');
+            if (ta && !ta.value) {
+                var nm = topic.replace(/^(Product|Waitlist): /, '');
+                ta.value = (topic.indexOf('Waitlist') === 0 ? 'Please add me to the waitlist for ' : 'I would like a demo of ') + nm + '.';
+            }
+        }
         f.addEventListener('submit', function (e) {
             e.preventDefault();
             var d = new FormData(f);

@@ -38196,4 +38196,104 @@ body {
 .at-btn-group-transparent .at-btn {
   padding-inline-start: 44px;
 }
+
+/* ---- Products ---- */
+.vb-status {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(10, 11, 22, 0.9);
+  line-height: 1;
+}
+.vb-status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.vb-status--demo {
+  color: #ffffff;
+  border: 1px solid rgba(62, 155, 253, 0.75);
+}
+.vb-status--demo i {
+  background: var(--vb-primary);
+  box-shadow: 0 0 0 4px rgba(62, 155, 253, 0.28);
+}
+.vb-status--soon {
+  color: #f3d6fb;
+  border: 1px solid rgba(203, 108, 230, 0.75);
+}
+.vb-card-actions .at-btn,
+.sec-1-portfolio-details-1 .at-btn.vb-demo-btn {
+  padding: 13px 22px;
+  font-size: 15px;
+}
+.vb-details-btn {
+  background: transparent !important;
+  border: 1px solid rgba(160, 175, 255, 0.4);
+  color: #ffffff !important;
+}
+.vb-details-btn:hover {
+  background: var(--vb-primary) !important;
+  border-color: var(--vb-primary);
+  color: var(--vb-on-primary) !important;
+}
+.vb-soon-btn {
+  background: rgba(203, 108, 230, 0.14) !important;
+  color: #f3d6fb !important;
+  border: 1px dashed rgba(203, 108, 230, 0.65);
+  cursor: default;
+  pointer-events: none;
+}
+.vb-product-title {
+  font-size: clamp(44px, 7.2vw, 118px);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.vb-product-title sup {
+  font-size: 0.35em;
+  color: var(--vb-secondary);
+}
+.vb-back {
+  color: var(--vb-primary);
+  display: inline-block;
+}
+.vb-back:hover {
+  color: var(--vb-secondary);
+}
+.vb-feature-list li {
+  padding: 7px 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.vb-feature-list li::marker {
+  color: var(--vb-primary);
+}
+.vb-waitlist {
+  border-top: 1px solid var(--vb-line);
+}
+.mg-portfolio-thumb img {
+  border-radius: 18px;
+}
+
+/* product cards: titles can wrap to two lines, so drop the single-line slide-up hover (its shadow copy showed through) */
+.mg-portfolio-item .cs-portfolio-title,
+.mg-portfolio-item .cs-portfolio-title a {
+  text-shadow: none !important;
+  overflow: visible;
+  height: auto;
+  transform: none;
+}
+.mg-portfolio-item .cs-portfolio-title a:hover {
+  color: var(--vb-primary);
+}
 /*# sourceMappingURL=main.css.map */
